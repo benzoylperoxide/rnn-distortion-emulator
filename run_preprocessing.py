@@ -75,8 +75,8 @@ def process_wav(name, in_file, out_file, normalize_flag):
     }
 
     for split_name, (split_input, split_target) in splits.items():
-        save_wav(os.path.join(base_dir, split_name, f"{name}_input.wav"), split_input)
-        save_wav(os.path.join(base_dir, split_name, f"{name}_target.wav"), split_target)
+        save_wav(os.path.join(base_dir, split_name, f"{name}-input.wav"), split_input)
+        save_wav(os.path.join(base_dir, split_name, f"{name}-target.wav"), split_target)
 
     print(f"Data split and saved in {base_dir}/train, {base_dir}/val, {base_dir}/test")
 

@@ -50,9 +50,9 @@ def main(args):
 
     dataset = CAMLdataset.DataSet(data_dir='data')
     dataset.create_subset('train', frame_len=22050)
-    dataset.load_file(args.name, 'train')
+    dataset.load_file(f"train/{args.name}", 'train')  # Training data path
     dataset.create_subset('val')
-    dataset.load_file(args.name, 'val')
+    dataset.load_file(f"val/{args.name}", 'val')  # Validation data path
 
     print(f"Training {args.model} model on {args.name}")
     start_time = time.time()
@@ -107,9 +107,6 @@ def main(args):
         json.dump(model_data, f, indent=4)
     print(f"Model saved to: {json_path}")
 
-
-
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train RNN models for audio processing.")
     parser.add_argument("name", help="Model name")
@@ -123,7 +120,7 @@ if __name__ == "__main__":
     parser.add_argument("--cuda", type=bool, default=True, help="Enable CUDA")
     parser.add_argument("--epochs", type=int, default=300, help="Number of training epochs")
     parser.add_argument("--batch_size", type=int, default=50, help="Batch size")
-    parser.add_argument("--learn_rate", type=float, default=0.001, help="Learning rate")
+    parser.add_argument("--learn_rate", type=float, default=0.005, help="Learning rate")
     parser.add_argument("--save_location", default="results", help="Directory to save models")
     parser.add_argument("--load_model", type=bool, default=True, help="Load existing model if available")
 
