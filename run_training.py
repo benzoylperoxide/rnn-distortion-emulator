@@ -120,7 +120,7 @@ if __name__ == "__main__":
     parser.add_argument("--cuda", type=bool, default=True, help="Enable CUDA")
     parser.add_argument("--epochs", type=int, default=300, help="Number of training epochs")
     parser.add_argument("--batch_size", type=int, default=50, help="Batch size")
-    parser.add_argument("--learn_rate", type=float, default=0.005, help="Learning rate")
+    parser.add_argument("--learn_rate", type=float, default=0.0005, help="Learning rate")
     parser.add_argument("--save_location", default="results", help="Directory to save models")
     parser.add_argument("--load_model", type=bool, default=True, help="Load existing model if available")
 
