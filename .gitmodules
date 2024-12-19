@@ -1,3 +1,4 @@
 [submodule "CoreAudioML"]
 	path = CoreAudioML
 	url = git@github.com:benzoylperoxide/CoreAudioML.git
+	branch = rnn-caml
